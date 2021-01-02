@@ -1,0 +1,20 @@
+<html>
+  <head>
+        <title>Input tutorial</title>
+        <script language="javascript">
+                function addNumbers()
+                {
+                        var val1 = parseInt(document.getElementById("value1").value);
+                        var val2 = 0.1
+                        var ansD = document.getElementById("answer");
+                        ansD.value = val1 / val2;
+                }
+        </script>
+  </head>
+  <body>
+        Input Your distance in KM = <input type="text" id="value1" name="value1" value=""/><br><br>
+        Speed of Robot in KM per hour = 0.1<br><br>
+        <input type="button" name="Sumbit" value="Submit" onclick="javascript:addNumbers()"/><br><br>
+        Time required in hour = <input type="text" id="answer" name="answer" value=""/>
+  </body>
+</html>

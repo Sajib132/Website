@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>Google Maps</title> 
+  </script>
+    <div style="text-align: left;">
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNqioHpeBSM14_op53aeA3N4YrbzlkUbg&callback=initMap"></script></div> 
+</head> 
+<body>
+  <div id="map" style="width: 1400px; height: 700px;"></div>
+ 
+  <div class="right" style="clear:right"></div>
+
+  <script type="text/javascript">
+    var locations = [
+      ['Hydrabad', 17.3850, 78.4867, 4],
+      ['Vijayawada', 16.5062, 80.6480, 5],
+      ['Vizag', 17.6868, 83.2185, 3],
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: new google.maps.LatLng(17.6868, 83.2185),
+center: new google.maps.LatLng(17.3850, 78.4867),
+center: new google.maps.LatLng(16.5062, 80.6480),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+</body>
+</html>

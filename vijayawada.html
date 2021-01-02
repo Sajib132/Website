@@ -1,0 +1,60 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css"  href="stylesheet.css">
+ 
+</head>
+
+<body>
+
+<div id="map"><br>
+      <br>
+      <br>
+    </div>
+    <p style="text-align: left;">
+      <style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style> </p>
+    <p><b> Location :Vijayawada </b><br><br>
+            Lattitude : 16.5062<br>
+            Longitude : 80.6480<br></p>
+    <script>
+      function initMap() {
+  var uluru = {lat: 16.5062, lng: 80.6480};   
+   
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: uluru
+     });
+          
+  var image = 'Capture_ewds (1).png';
+        var beachMarker = new google.maps.Marker({
+          position: {lat: 16.5062, lng: 80.6480},
+          map: map,
+          icon: image
+  });
+          
+  var infoWindowOptions = {
+    content: 'Vijayawada<br>lat: 16.5062<br>long: 80.6480'
+};
+          
+  var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
+google.maps.event.addListener(marker,'mouseover',function(e){
+  
+  infoWindow.open(map, marker);
+  
+});
+
+}
+    </script>
+    <div style="text-align: left;">
+      <script async="" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv6P0GP-fiZ-tkcmIkIv6PgZR5vWmD2DE&callback=initMap"></script></div> 
+
+
+</body>
+</html>
+
