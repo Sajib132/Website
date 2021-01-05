@@ -82,8 +82,8 @@
 				document.getElementById('username').innerHTML =" ** Please fill the username field";
 				return false;
 			}
-			if((user.length <= 2) || (user.length > 20)) {
-				document.getElementById('username').innerHTML =" ** Username lenght must be between 2 and 20";
+			if((user.length <= 1) || (user.length > 8)) {
+				document.getElementById('username').innerHTML =" ** Username lenght must be between 1 and 8";
 				return false;	
 			}
 			if(!isNaN(user)){
@@ -142,12 +142,12 @@
 				return false;
 			}
 			if(emails.indexOf('@') <= 0 ){
-				document.getElementById('emailids').innerHTML =" ** @ Invalid Position";
+				document.getElementById('emailids').innerHTML =" **  Add a valid email";
 				return false;
 			}
 
 			if((emails.charAt(emails.length-4)!='.') && (emails.charAt(emails.length-3)!='.')){
-				document.getElementById('emailids').innerHTML =" ** . Invalid Position";
+				document.getElementById('emailids').innerHTML =" ** . Add a valid email";
 				return false;
 			}
 		}
